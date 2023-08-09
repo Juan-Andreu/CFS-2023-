@@ -21,10 +21,10 @@ class Camiones extends Vehiculo {
     }
 
     public CapacidadDeCarga(carga:number):string{
-        if(carga <= 15){
+        if(carga <= 40){
             console.log(this.capCarga);
         }else{
-            return 'Su carga supera la capacidad de carga. Libere el peso de la carga';
+            return 'La carga excede la capacidad máxima. Por favor, descargue parte del peso de la carga.';
         }
         return(this.capCarga, 'Toneladas');
     }

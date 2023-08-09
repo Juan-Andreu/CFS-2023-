@@ -67,7 +67,7 @@ export class Vehiculo {
   }
 }
 
-class Auto {
+class Auto{
   private patente: string;
   private marca: string;
   private modelo: string;
@@ -144,3 +144,5 @@ class RegistroAutomotor {
     }
   }
 }
+
+
