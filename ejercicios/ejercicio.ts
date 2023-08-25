@@ -1,98 +1,93 @@
 class ElementoHTML {
   protected Id: string;
-  protected Class: string;
+  protected ClassName: string;
   protected Value: string;
 
   constructor(id: string, className: string, value: string) {
     this.Id = id;
-    this.Class = className;
+    this.ClassName = className;
     this.Value = value;
   }
+}
 
-  public toDom(){
+class ElementoInput extends ElementoHTML {
+  private Type: string;
+
+  constructor(id: string, className: string, value: string, type: string) {
+    super(id, className, value);
+    this.Type = type;
+  }
+
+  public crearElemento(): HTMLInputElement {
+    let elemento: HTMLInputElement = document.createElement('input');
+    elemento.id = this.Id;
+    elemento.className = this.ClassName;
+    elemento.value = this.Value;
+    elemento.type = this.Type;
+
+    return elemento;
   }
 }
 
-class ElementInput extends ElementoHTML {
-    private Type: string;
-
-    constructor(Id: string, Name: string, Class: string, Value: string, Type: string){
-        super(Id, Class, Value)
-        this.Type = Type;
-    }
-
-    public crearElemento(): HTMLElement {
-        let elemento: HTMLElement = document.createElement('input');
-        elemento.id = this.Id
-        elemento.className = this.Class
-        elemento.setAttribute('value', this.Value);
-        elemento.setAttribute('type', this.Type);
-
-        return elemento;
-    }
-}
-
-class ElementTextarea extends ElementoHTML{
+class ElementoTextarea extends ElementoHTML {
   private cols: number;
   private rows: number;
 
-  constructor(Id: string, Name: string, Class: string, Value: string, cols: number, rows: number){
-    super(Id, Class, Value)
+  constructor(id: string, className: string, value: string, cols: number, rows: number) {
+    super(id, className, value);
     this.cols = cols;
     this.rows = rows;
   }
 
   public crearElemento(): HTMLTextAreaElement {
-    let textarea : HTMLTextAreaElement = document.createElement('textarea')
+    let textarea: HTMLTextAreaElement = document.createElement('textarea');
     textarea.id = this.Id;
-    textarea.className = this.Class;
+    textarea.className = this.ClassName;
+    textarea.value = this.Value;
     textarea.cols = this.cols;
     textarea.rows = this.rows;
-   
+
     return textarea;
   }
 }
 
-class Select extends ElementoHTML {
-  private option: Node [];
-
-  constructor(Id: string, className: string, value: string, options: Node[]) {
-      super(Id, className, value)
-      this.option = options;
-  }
-
-  public crearElemento(): HTMLSelectElement {
-      let select: HTMLSelectElement = document.createElement("select");
-      select.id = this.Id;
-      select.setAttribute("className", this.Class);
-
-      for (const option of this.option) {
-          if (option instanceof HTMLOptionElement) {
-              select.appendChild(option);
-          }
-      }
-
-      return select;
+class CustomOption extends HTMLOptionElement {
+  constructor(text: string, value: string) {
+    super();
+    this.text = text;
+    this.value = value;
   }
 }
 
-let inputText = new ElementInput('texto1', 'texto1', 'control-text', 'Hás creado un input', 'text');
-inputText.crearElemento();
+class Select extends ElementoHTML {
+  private options: CustomOption[];
 
-let inputCheckbox = new ElementInput('check', 'check', '', '', 'checkbox')
-inputCheckbox.crearElemento();
+  constructor(id: string, className: string, options: CustomOption[]) {
+    super(id, className, "");
+    this.options = options;
+  }
 
-let textarea = new ElementTextarea('textarea', 'textarea', 'text', '', 30, 10 );
-textarea.crearElemento();
+  public crearElemento(): HTMLSelectElement {
+    let select: HTMLSelectElement = document.createElement("select");
+    select.id = this.Id;
+    select.className = this.ClassName;
 
-let select = new Select('localidad', 'localidad', '', [])
-select.crearElemento();
+    for (const option of this.options) {
+      select.appendChild(option);
+    }
+
+    return select;
+  }
+}
 
 function mostrarElemento() {
-  const elementoInput = new ElementInput("inputId", "inputClass", "Input Value", "text");
-  const elementoTextarea = new ElementTextarea("textareaId", "textareaClass", "Textarea Value", 4, 6);
-  const opcionesSelect = [new Option("Option 1", "1"), new Option("Option 2", "2")];
-  const elementoSelect = new Select("selectId", "selectClass", "Select Value", opcionesSelect);
+  const elementoInput = new ElementoInput("inputId", "inputClass", "Input Value", "text");
+  const elementoTextarea = new ElementoTextarea("textareaId", "textareaClass", "Textarea Value", 4, 6);
+  const opcionesSelect = [
+    new CustomOption("Option 1", "1"),
+    new CustomOption("Option 2", "2")
+  ];
+  const elementoSelect = new Select("selectId", "selectClass", opcionesSelect);
 
   const container = document.createElement("div");
   container.appendChild(elementoInput.crearElemento());

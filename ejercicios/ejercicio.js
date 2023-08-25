@@ -13,48 +13,90 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var ElementoHtml = /** @class */ (function () {
-    function ElementoHtml(id, className, value) {
+var ElementoHTML = /** @class */ (function () {
+    function ElementoHTML(id, className, value) {
         this.Id = id;
-        this.Class = className;
+        this.ClassName = className;
         this.Value = value;
     }
-    ElementoHtml.prototype.toDom = function () {
-    };
-    return ElementoHtml;
+    return ElementoHTML;
 }());
-var ElementInput = /** @class */ (function (_super) {
-    __extends(ElementInput, _super);
-    function ElementInput(Id, Name, Class, Value, Type) {
-        var _this = _super.call(this, Id, Class, Value) || this;
+var ElementoInput = /** @class */ (function (_super) {
+    __extends(ElementoInput, _super);
+    function ElementoInput(Id, ClassName, Value, Type) {
+        var _this = _super.call(this, Id, ClassName, Value) || this;
         _this.Type = Type;
         return _this;
     }
-    ElementInput.prototype.crearElemento = function () {
+    ElementoInput.prototype.crearElemento = function () {
         var elemento = document.createElement('input');
         elemento.id = this.Id;
-        elemento.className = this.Class;
+        elemento.className = this.ClassName;
         elemento.setAttribute('value', this.Value);
         elemento.setAttribute('type', this.Type);
         return elemento;
     };
-    return ElementInput;
-}(ElementoHtml));
-var ElementTextarea = /** @class */ (function (_super) {
-    __extends(ElementTextarea, _super);
-    function ElementTextarea(Id, Name, Class, Value, cols, rows) {
-        var _this = _super.call(this, Id, Class, Value) || this;
+    return ElementoInput;
+}(ElementoHTML));
+var ElementoTextarea = /** @class */ (function (_super) {
+    __extends(ElementoTextarea, _super);
+    function ElementoTextarea(Id, ClassName, Value, cols, rows) {
+        var _this = _super.call(this, Id, ClassName, Value) || this;
         _this.cols = cols;
         _this.rows = rows;
         return _this;
     }
-    ElementTextarea.prototype.crearElemento = function () {
+    ElementoTextarea.prototype.crearElemento = function () {
         var textarea = document.createElement('textarea');
         textarea.id = this.Id;
-        textarea.className = this.Class;
+        textarea.className = this.ClassName;
+        textarea.value = this.Value;
         textarea.cols = this.cols;
         textarea.rows = this.rows;
         return textarea;
     };
-    return ElementTextarea;
-}(ElementoHtml));
+    return ElementoTextarea;
+}(ElementoHTML));
+var CustomOption = /** @class */ (function (_super) {
+    __extends(CustomOption, _super);
+    function CustomOption(text, value) {
+        var _this = _super.call(this) || this;
+        _this.text = text;
+        _this.value = value;
+        return _this;
+    }
+    return CustomOption;
+}(HTMLOptionElement));
+var Select = /** @class */ (function (_super) {
+    __extends(Select, _super);
+    function Select(Id, ClassName, options) {
+        var _this = _super.call(this, Id, ClassName, "") || this;
+        _this.options = options;
+        return _this;
+    }
+    Select.prototype.crearElemento = function () {
+        var select = document.createElement("select");
+        select.id = this.Id;
+        select.className = this.ClassName;
+        for (var _i = 0, _a = this.options; _i < _a.length; _i++) {
+            var option = _a[_i];
+            select.appendChild(option);
+        }
+        return select;
+    };
+    return Select;
+}(ElementoHTML));
+function mostrarElemento() {
+    var elementoInput = new ElementoInput("inputId", "inputClass", "Input Value", "text");
+    var elementoTextarea = new ElementoTextarea("textareaId", "textareaClass", "Textarea Value", 4, 6);
+    var opcionesSelect = [
+        new CustomOption("Option 1", "1"),
+        new CustomOption("Option 2", "2")
+    ];
+    var elementoSelect = new Select("selectId", "selectClass", opcionesSelect);
+    var container = document.createElement("div");
+    container.appendChild(elementoInput.crearElemento());
+    container.appendChild(elementoTextarea.crearElemento());
+    container.appendChild(elementoSelect.crearElemento());
+    document.body.appendChild(container);
+}
