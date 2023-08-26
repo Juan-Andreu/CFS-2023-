@@ -28,5 +28,5 @@ le llegan a un método son inválidos
 
 TypeScript se encarga de validar los parametros, ya que permite describir de que tipos son, si 
     declara un tipo number va a ser un numero, si declara un boolean espera un true o false, y asi...
-    También permite declarar parametros opcionales o proporcionar valores por defecto, lo que
+    También te permite declarar parametros opcionales o proporcionar valores por defecto, lo que
     te permite omitir codigo de no ser necesario.

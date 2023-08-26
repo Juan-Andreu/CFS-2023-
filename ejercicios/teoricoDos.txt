@@ -1,0 +1,26 @@
+• ¿Qué pasa cuando se corre el comando “tsc”?
+
+El comando tsc compila el archivo ts a un archivo js automaticamente.
+
+• ¿Cómo está organizada una clase?
+
+Una clase esta organizad por:
+
+- Variables Internas
+
+- Constructor 
+
+- Métodos Públicos
+
+- Métodos Privados
+
+
+• ¿Es correcto que un método auxiliar de una clase 
+sea público? ¿Por qué?
+
+No necesariamente. Generalmente es una buena práctica declararlo como privado o protegido en lugar de público.
+ Sesugiere que es una buena práctica limitar el acceso a los detalles internos de una clase, especialmente en el caso de métodos auxiliares, utilizando niveles de acceso privado o protegido en lugar de público. 
+
+• Enumerar las características de una interfaz
+
+
