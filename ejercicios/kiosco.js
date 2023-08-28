@@ -46,4 +46,4 @@ var yerbaPlayadito = new Item("Yerba Playadito", "$800");
 stock.cargarItems(yerbaPlayadito);
 // Vender un artículo
 // stock.venderItems(yerbaPlayadito);
-console.log(stock.venderItems());
+console.log(stock.venderItems(yerbaPlayadito));

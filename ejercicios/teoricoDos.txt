@@ -23,4 +23,12 @@ No necesariamente. Generalmente es una buena práctica declararlo como privado o
 
 • Enumerar las características de una interfaz
 
+-Funcionan como un “contrato” que debe cumplir una determinada clase.
+
+-Se especifican los métodos pero sin comportamiento, es decir sin codificar lo que hacen.
+
+-Las clases que implementen a las interfaces tienen la obligación de implementar todos los 
+   métodos definidos en la interfaz.
+
+-Son una muy buena práctica ya que ayudan a plantear lo que debería hacer una clase.
 

@@ -1,3 +1,4 @@
+
 class Item {
     protected tipoDeProducto: string;
     protected precioCosto: string;
