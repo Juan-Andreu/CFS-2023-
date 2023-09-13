@@ -21,6 +21,11 @@ class Stock {
     itemsDisponibles: Item[] = [];
     itemsVendidos: Item[] = [];
 
+    constructor(){
+        this.itemsDisponibles = [];
+        this.itemsVendidos = [];
+    }
+
     cargarItems(item: Item) {
         this.itemsDisponibles.push(item);
     }

@@ -11,6 +11,7 @@ var Alumno = /** @class */ (function () {
         this.apellido = apellido;
         this.edad = edad;
         this.exams = [];
+        this.exams = [];
     }
     Alumno.prototype.agregarExamen = function (examen) {
         this.exams.push(examen);
@@ -19,9 +20,9 @@ var Alumno = /** @class */ (function () {
         if (this.exams.length === 0) {
             return 0;
         }
+        // method reduce:  acumula valores (notas o promedios) a lo largo de una secuencia de exámenes o alumnos, respectivamente, y calcula sumas que luego se dividen para obtener promedios.
         var sumatoriaNotas = this.exams.reduce(function (sum, examen) { return sum + examen.nota; }, 0);
         return sumatoriaNotas / this.exams.length;
-        // method reduce:  acumula valores (notas o promedios) a lo largo de una secuencia de exámenes o alumnos, respectivamente, y calcula sumas que luego se dividen para obtener promedios.
     };
     return Alumno;
 }());
@@ -50,11 +51,11 @@ var SistemaGestion = /** @class */ (function () {
 }());
 // Ejemplo de uso
 var sistema = new SistemaGestion();
-var alumno1 = new Alumno("Juan", "Andreu", 18);
+var alumno1 = new Alumno("Juan", "Andreu", 21);
 alumno1.agregarExamen(new Examen("Matemáticas", 6));
 alumno1.agregarExamen(new Examen("Historia", 9));
 sistema.agregarAlumno(alumno1);
-var alumno2 = new Alumno("Luna", "Cristofanelli", 17);
+var alumno2 = new Alumno("Luna", "Cristofanelli", 20);
 alumno2.agregarExamen(new Examen("Matemáticas", 7));
 alumno2.agregarExamen(new Examen("Historia", 8));
 sistema.agregarAlumno(alumno2);
