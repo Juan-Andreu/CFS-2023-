@@ -26,7 +26,7 @@ interface Animal {
     private pelaje: string;
   
     constructor(Nombre: string, edad: number, pelaje: string) {
-      super(Nombre, "León"); // Cambiado "Felino" a "León"
+      super(Nombre, "León");
       this.edad = edad;
       this.pelaje = pelaje;
     }
