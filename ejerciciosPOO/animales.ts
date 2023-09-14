@@ -1,3 +1,4 @@
+
 export class Animal {
     protected nombre : string;
     protected edad : number; 
@@ -9,15 +10,15 @@ export class Animal {
         this.raza = raza;
     }
 
-    public hacer_sonido () : string{
-        return "" 
+    public hacerSonido () : string{
+        return "" ;
     }
 
     public moverse () : void{
     }
 
     public mostrarInfo(): string {
-        return (this.nombre, this.raza)
+        return (this.nombre, this.raza);
     }
 }
 
@@ -26,10 +27,10 @@ class Perro extends Animal {
 
     public constructor (nombre : string, edad : number, raza : string, tamaño : string){
         super(nombre, edad, raza)
-        this.nombre = "bonito";
-        this.edad = 13;
-        this.raza = "Mestizo";
-        this.tamaño = "pequeño"
+        this.nombre = nombre;
+        this.edad = edad;
+        this.raza = raza;
+        this.tamaño = tamaño;
     }
 
     public buscarObjeto () : string {
@@ -37,7 +38,7 @@ class Perro extends Animal {
     }
 
     public hacer_sonido () : string{
-        return "ladrar" 
+        return "¡guag!" 
     }
 
     public moverse () : void{
@@ -53,10 +54,10 @@ class Gato extends Animal{
 
     public constructor(nombre: string, edad : number, raza : string, pelaje : string){
         super(nombre,edad,raza)
-        this.nombre = "la micha";
-        this.edad = 3;
-        this.raza = "negra como una pantera";
-        this.pelaje = "corto y brilloso";
+        this.nombre = nombre;
+        this.edad = edad;
+        this.raza = raza;
+        this.pelaje = pelaje;
     }
 
     public jugar_con_juguete () : string {
@@ -64,7 +65,7 @@ class Gato extends Animal{
     }
 
     public hacer_sonido () : string{
-        return "maullar" 
+        return "¡miau!" 
     }
 
     public moverse () : void{
@@ -81,10 +82,10 @@ class Pajaro extends Animal {
 
     public constructor (nombre : string, edad : number, raza : string, tipo_de_pico: string){
         super(nombre,edad,raza)
-        this.nombre = "negrito";
-        this.edad = 5;
-        this.raza = "charrua";
-        this.tipo_de_pico = "curvado y negro";
+        this.nombre = nombre;
+        this.edad = edad;
+        this.raza = raza;
+        this.tipo_de_pico = tipo_de_pico;
     }
 
     public volar (): string{
