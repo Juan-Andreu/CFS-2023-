@@ -10,11 +10,11 @@ export class Usuario {
     }
 
     public publicarPost(post: string) {
-        console.log(`El usuario ${this.nombreCuenta} ha publicado: ${post}`);
+        console.log(`${this.nombreCuenta} ha publicado: ${post}`);
     }
 
     public comentarPost(post: string, comentario: string) {
-        console.log(`El usuario ${this.nombreCuenta} ha comentado en el post: ${comentario}`);
+        console.log(`${this.nombreCuenta} ha comentado en el post: ${comentario}`);
     }
 }
 
