@@ -1,0 +1,92 @@
+[
+  {
+    "nombre": "Juan",
+    "apellido": "Andreu",
+    "fechaNacimiento": "01/01/1990",
+    "documento": 1000001,
+    "telefono": 2000001,
+    "miembroDesde": "19/9/2023",
+    "deporte": "Futbol"
+  },
+  {
+    "nombre": "Juan",
+    "apellido": "Andreu",
+    "fechaNacimiento": "01/01/1990",
+    "documento": 1000002,
+    "telefono": 2000002,
+    "miembroDesde": "19/9/2023",
+    "deporte": "Futbol"
+  },
+  {
+    "nombre": "Juan",
+    "apellido": "Andreu",
+    "fechaNacimiento": "01/01/1990",
+    "documento": 1000003,
+    "telefono": 2000003,
+    "miembroDesde": "19/9/2023",
+    "deporte": "Futbol"
+  },
+  {
+    "nombre": "Luna",
+    "apellido": "Cristofanelli",
+    "fechaNacimiento": "01/01/1990",
+    "documento": 1000004,
+    "telefono": 2000004,
+    "miembroDesde": "19/9/2023",
+    "deporte": "Futbol"
+  },
+  {
+    "nombre": "dasdas",
+    "apellido": "dasdsa",
+    "fechaNacimiento": "01/01/1990",
+    "documento": 1000005,
+    "telefono": 2000005,
+    "miembroDesde": "20/9/2023",
+    "deporte": "Futbol"
+  },
+  {
+    "nombre": "dsa",
+    "apellido": "dsa",
+    "fechaNacimiento": "01/01/1990",
+    "documento": 1000006,
+    "telefono": 2000006,
+    "miembroDesde": "20/9/2023",
+    "deporte": "Futbol"
+  },
+  {
+    "nombre": "d",
+    "apellido": "sa",
+    "fechaNacimiento": "01/01/1990",
+    "documento": 1000007,
+    "telefono": 2000007,
+    "miembroDesde": "20/9/2023",
+    "deporte": "Futbol"
+  },
+  {
+    "nombre": "d",
+    "apellido": "asd",
+    "fechaNacimiento": "01/01/1990",
+    "documento": 1000008,
+    "telefono": 2000008,
+    "miembroDesde": "20/9/2023",
+    "deporte": "Futbol"
+  },
+  {
+    "nombre": "as",
+    "apellido": "",
+    "fechaNacimiento": "01/01/1990",
+    "documento": 1000009,
+    "telefono": 2000009,
+    "miembroDesde": "20/9/2023",
+    "deporte": "Futbol"
+  },
+  {
+    "nombre": "d",
+    "apellido": "as",
+    "fechaNacimiento": "01/01/1990",
+    "documento": 1000010,
+    "telefono": 2000010,
+    "miembroDesde": "20/9/2023",
+    "deporte": "Futbol"
+  }
+]
